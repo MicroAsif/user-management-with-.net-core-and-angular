@@ -1,0 +1,18 @@
+<div>
+  <table class="table table-hover table-bordered">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Roles</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of users">
+        <td>{{item.name}}</td>
+        <td>{{item.email}}</td>
+        <td><strong *ngFor="let item of item.roles"> {{item}} </strong></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

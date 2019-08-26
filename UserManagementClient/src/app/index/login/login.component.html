@@ -1,0 +1,40 @@
+
+
+<div class="sidenav">
+  <div class="login-main-text">
+    <h2>Application<br> Login Page</h2>
+    <p>Login or register from here to access.</p>
+  </div>
+</div>
+<div class="main">
+  <div class="col-md-6 col-sm-12">
+    <div class="login-form">
+      <form name="form" #f="ngForm">
+        <div class="form-group">
+          <label>User Email</label>
+          <input type="text" class="form-control" placeholder="Enter Email" required [(ngModel)]="user.email"
+            name="email" #Email="ngModel" [class.border-danger]="Email.invalid && (Email.dirty || Email.touched)">
+          <small class="text-danger" *ngIf="Email.errors?.required && (Email.dirty || Email.touched) ">
+            Email is required
+          </small>
+
+        </div>
+        <div class="form-group">
+          <label>Password</label>
+          <input type="password" class="form-control" placeholder="Enter Password" name="password"
+            [(ngModel)]="user.password" #Password="ngModel" required
+            [class.border-danger]="Password.invalid && (Password.dirty || Password.touched)">
+
+            <small class="text-danger" *ngIf="Password.errors?.required && (Password.dirty || Password.touched)">
+              Password is required
+            </small>
+        </div>
+
+        <div class="form-group">
+          <button type="submit" [disabled]="f.form.invalid" class="btn btn-black" (click)="login(user)">Login</button>
+        </div>
+
+      </form>
+    </div>
+  </div>
+</div>

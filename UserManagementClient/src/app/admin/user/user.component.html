@@ -1,0 +1,89 @@
+<div class="row">
+    <div class="col-md-12 d-flex align-items-stretch grid-margin">
+      <div class="row flex-grow">
+        <div class="col-12 grid-margin">
+          <div class="card">
+            <div class="card-body">
+              
+              <h4 class="card-title">Add user</h4>
+              <form  name="form"  #f="ngForm" novalidate >
+                <div class="form-group">
+                  <label for="name">Name</label>
+                  <input type="text" class="form-control" name="name" id="name" [(ngModel)]="user.name"
+                  placeholder="Enter Name"  #Name="ngModel" required
+                  [class.border-danger]="Name.invalid && (Name.dirty || Name.touched)">
+                </div>
+  
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="price">Email</label>
+                      <input type="text" class="form-control" name="email" [(ngModel)]="user.email" id="email" placeholder="Enter Email" 
+                      #Email="ngModel"  required pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$"
+                      [class.border-danger]="Email.invalid && (Email.dirty || Email.touched)" />
+                      <small *ngIf="Email.invalid && (Email.dirty || Email.touched)" class="text-danger">
+                        Email is required and format should be <b>admin@admin.com</b>.
+                      </small>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="discount">Phone</label>
+                      <input type="text" class="form-control" name="Phone" [(ngModel)]="user.Phone" id="Phone" placeholder="Enter Phone no"
+                      #Phone="ngModel" required [class.border-danger]="Phone.invalid && (Phone.dirty || Phone.touched)"/>
+                    </div>
+                  </div>
+                  
+                </div>
+  
+                
+                <div ngModelGroup="passwordGroup" [class.border-danger]="confirmPassword.invalid &&  confirmPassword.touched"  >
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="Password">Password</label>
+                        <input type="password" class="form-control" name="password" [(ngModel)]="user.password" id="password" placeholder="Enter Password"
+                        (change)="confirmPassword.control.updateValueAndValidity()"
+                        #Password="ngModel" required [class.border-danger]="Password.invalid && (Password.dirty || Password.touched)" />
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="confirmPassword">Confirm Password</label>
+                        <input type="password" class="form-control" name="confirmPassword" [(ngModel)]="user.confirmPassword" id="confirmPassword" placeholder="Enter confirm Password"
+                        #confirmPassword="ngModel" required [class.border-danger]="confirmPassword.invalid && (confirmPassword.dirty || confirmPassword.touched)" 
+                        appConfirmEqualValidator="password"/>
+                        <small  *ngIf="confirmPassword.touched && confirmPassword.errors?.notEqual && !confirmPassword.errors?.required" class="text-danger">
+                          password mismatch
+                        </small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+  
+                <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="discount">Role</label>
+                        <select  class="form-control" name="Role" [(ngModel)]="user.role" id="Role" #Role="ngModel" required>
+                            <option value="">Select Role</option>
+                            <option value="1">Manager</option>
+                            <option value="2">Sales</option>
+                        </select>
+                        
+                      </div>
+                    </div>
+                    
+                  </div>
+                 
+                <button type="button" [disabled]="f.form.invalid" (click)="saveUser()"  class="btn btn-success mr-2">Submit</button>
+                <button type="button" (click)="BackButtonClick()" class="btn btn-light">Cancel</button>
+              </form>
+            </div>
+          </div>
+        </div>
+  
+      </div>
+    </div>
+  </div>
+  
