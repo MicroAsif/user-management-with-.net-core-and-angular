@@ -12938,11 +12938,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\microasif\\source\\repos\\UserManagement\\UserManagement.csproj",
+      "projectUniqueName": "C:\\Users\\microasif\\source\\repos\\UserManagementApp\\UserManagement\\UserManagement.csproj",
       "projectName": "UserManagement",
-      "projectPath": "C:\\Users\\microasif\\source\\repos\\UserManagement\\UserManagement.csproj",
+      "projectPath": "C:\\Users\\microasif\\source\\repos\\UserManagementApp\\UserManagement\\UserManagement.csproj",
       "packagesPath": "C:\\Users\\microasif\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\microasif\\source\\repos\\UserManagement\\obj\\",
+      "outputPath": "C:\\Users\\microasif\\source\\repos\\UserManagementApp\\UserManagement\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\",
@@ -12997,10 +12997,16 @@
           }
         },
         "imports": [
-          "net461"
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48"
         ],
         "assetTargetFallback": true,
-        "warn": true
+        "warn": true,
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
       }
     }
   }

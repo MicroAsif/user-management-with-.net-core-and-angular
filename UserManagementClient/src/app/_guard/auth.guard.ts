@@ -10,6 +10,7 @@ export class AuthGuard implements CanActivate {
 
   canActivate(next: ActivatedRouteSnapshot): Observable<boolean> | Promise<boolean> | boolean {
 
+    console.log(next);
     const roles = next.firstChild.data['roles'] as Array<string>;
     console.log(roles);
 

@@ -4,4 +4,4 @@ import { IndexRoutes } from './index/index.router';
 
 
 
-export const routes: Routes = [...AdminRouter, ...IndexRoutes];
+export const routes: Routes = [...IndexRoutes, ...AdminRouter];
