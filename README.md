@@ -1,4 +1,4 @@
-# UserManagement
+# UserManagement with .NET core and Angular
 Web api and angular client for  user managemant 
 
 # technology 
